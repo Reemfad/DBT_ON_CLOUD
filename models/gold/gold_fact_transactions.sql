@@ -64,8 +64,10 @@ SELECT
     --t._ingestion_ts
 
 FROM transactions t
-WHERE c.customer_key IS NOT NULL 
+ 
 LEFT JOIN customers c ON t.customer_id  = c.customer_id
 LEFT JOIN products  p ON t.stock_code   = p.stock_code
 LEFT JOIN orders    o ON t.order_id     = o.order_id
 LEFT JOIN dates     d ON t.invoice_day  = d.full_date
+
+WHERE c.customer_key IS NOT NULL
