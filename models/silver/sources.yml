@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: online_retail
+    schema: bronze
+    tables:
+      - name: transactions
+      - name: customers
+      - name: orders

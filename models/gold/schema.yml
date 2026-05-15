@@ -1,0 +1,100 @@
+version: 2
+
+models:
+  - name: gold_dim_customers
+    columns:
+      - name: customer_key
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: gold_dim_products
+    columns:
+      - name: product_key
+        tests:
+          - unique
+          - not_null
+      - name: stock_code
+        tests:
+          - unique
+          - not_null
+
+  - name: gold_dim_date
+    columns:
+      - name: date_key
+        tests:
+          - unique
+          - not_null
+      - name: full_date
+        tests:
+          - unique
+          - not_null
+
+  - name: gold_dim_orders
+    columns:
+      - name: order_key
+        tests:
+          - unique
+          - not_null
+
+  - name: gold_fact_transactions
+    columns:
+      - name: transaction_key
+        tests:
+          - unique
+          - not_null
+      - name: customer_key
+        # tests:
+        #   - not_null
+      - name: product_key
+        tests:
+          - not_null
+      - name: date_key
+        tests:
+          - not_null
+
+  - name: gold_kpi_revenue_by_country
+    columns:
+      - name: country
+        tests:
+          - unique
+          - not_null
+
+  - name: gold_kpi_revenue_by_month
+    columns:
+      - name: revenue_month
+        tests:
+          - unique
+          - not_null
+
+  - name: gold_kpi_top_products
+    columns:
+      - name: product_key
+        tests:
+          - unique
+          - not_null
+
+  - name: gold_kpi_customer_summary
+    columns:
+      - name: customer_key
+        tests:
+          - unique
+          - not_null
+
+  - name: gold_kpi_order_delivery
+    columns:
+      - name: order_key
+        tests:
+          - unique
+          - not_null
+
+  - name: gold_kpi_invoice_summary
+    columns:
+      - name: invoice_id
+        tests:
+          - unique
+          - not_null
