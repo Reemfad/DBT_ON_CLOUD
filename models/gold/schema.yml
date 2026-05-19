@@ -98,3 +98,4 @@ models:
         tests:
           - unique
           - not_null
+  - name: gold_dim_date_1.sql
