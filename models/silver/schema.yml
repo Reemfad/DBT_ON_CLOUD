@@ -32,7 +32,7 @@ models:
       - name: volume_category
         # tests:
           # - accepted_values:
-          #      values: ['Medium Volume', 'Low Volume']
+          #     argumentss: ['Medium Volume', 'Low Volume']
       - name: price_category
         # tests:
           # - accepted_values:
