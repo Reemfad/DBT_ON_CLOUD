@@ -22,8 +22,8 @@ orders AS (
 ),
 
 dates AS (
-    SELECT hour_start, date_key
-    FROM {{ ref('gold_dim_date_1') }}
+    SELECT full_date, date_key
+    FROM {{ ref('gold_dim_date') }}
 )
 
 SELECT
@@ -68,6 +68,6 @@ FROM transactions t
 LEFT JOIN customers c ON t.customer_id  = c.customer_id
 LEFT JOIN products  p ON t.stock_code   = p.stock_code
 LEFT JOIN orders    o ON t.order_id     = o.order_id
---LEFT JOIN dates     d ON t.invoice_day  = d.full_date
-LEFT JOIN dates d  ON DATE_TRUNC('hour', t.invoice_date) = d.hour_start
+LEFT JOIN dates     d ON t.invoice_day  = d.full_date
+--LEFT JOIN dates d  ON DATE_TRUNC('hour', t.invoice_date) = d.hour_start
 WHERE c.customer_key IS NOT NULL
