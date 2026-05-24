@@ -9,8 +9,9 @@ WITH source AS (
 validated AS (
     SELECT *
     FROM source
-    WHERE CustomerID    IS NOT NULL
-      AND CustomerID    != ''
+    WHERE Customer_id    IS NOT NULL
+      AND try_cast(Customer_id AS STRING) != ''
+      --AND Customer_id    != ''
       AND Country       IS NOT NULL
       AND Country       != ''
 ),
@@ -19,7 +20,7 @@ validated AS (
 deduplicated AS (
     SELECT *,
         ROW_NUMBER() OVER (
-            PARTITION BY CustomerID
+            PARTITION BY Customer_id
             ORDER BY (SELECT NULL)
         ) AS row_num
     FROM validated
@@ -28,11 +29,11 @@ deduplicated AS (
 final AS (
     SELECT
         -- SURROGATE KEY
-        {{ dbt_utils.generate_surrogate_key(['CustomerID']) }}
+        {{ dbt_utils.generate_surrogate_key(['Customer_id']) }}
                                                         AS customer_key,
 
         -- NATURAL KEY
-        CAST(CustomerID     AS STRING)                  AS customer_id,
+        CAST(Customer_id     AS STRING)                  AS customer_id,
 
         -- CLEANING: title case, trim whitespace
         INITCAP(TRIM(Country))                          AS country,
