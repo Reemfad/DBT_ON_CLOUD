@@ -20,7 +20,7 @@ validated AS (
       AND InvoiceDate   IS NOT NULL
       AND Customer_id    IS NOT NULL
       AND try_cast(Customer_id AS STRING) != ''
-      AND Customer_id    != ''
+      --AND Customer_id    != ''
       AND order_id      IS NOT NULL
       AND order_id      != ''
 ),

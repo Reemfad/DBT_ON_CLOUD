@@ -11,7 +11,7 @@ validated AS (
     FROM source
     WHERE Customer_id    IS NOT NULL
       AND try_cast(Customer_id AS STRING) != ''
-      AND Customer_id    != ''
+      --AND Customer_id    != ''
       AND Country       IS NOT NULL
       AND Country       != ''
 ),

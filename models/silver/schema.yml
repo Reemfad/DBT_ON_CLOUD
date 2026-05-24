@@ -32,11 +32,11 @@ models:
       - name: volume_category
         tests:
           - accepted_values:
-                arguments: ['High Volume',Medium Volume','Low Volume']
+                values: ['High Volume','Medium Volume','Low Volume']
       - name: price_category
         tests:
           - accepted_values:
-             arguments: ['Premium', 'Mid Range', 'Budget']
+             values: ['Premium', 'Mid Range', 'Budget']
 
   - name: silver_customers
     description: "Deduplicated and cleaned customer dimension"
@@ -72,10 +72,10 @@ models:
         tests:
           - not_null
           - accepted_values:
-              arguments : ['delivered', 'shipped', 'cancelled',
-                       'processing', 'invoiced', 'unavailable']
+              values : [ 'cancelled','delivered','in transit','pending', 'shipped']
+                       
       - name: order_status_group
         tests:
           - accepted_values:
-              arguments: ['Completed', 'In Progress',
+              values: ['Completed', 'In Progress',
                      'Cancelled', 'Other']
