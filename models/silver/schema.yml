@@ -55,7 +55,7 @@ models:
       - name: market_type
         tests:
           - accepted_values:
-                arguments: ['Domestic', 'International']
+                values: ['Domestic', 'International']
 
   - name: silver_orders
     description: "Cleaned order lifecycle with delivery metrics"
