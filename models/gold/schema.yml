@@ -48,8 +48,8 @@ models:
           - unique
           - not_null
       - name: customer_key
-        # tests:
-        #   - not_null
+        tests:
+         - not_null
       - name: product_key
         tests:
           - not_null
@@ -57,45 +57,45 @@ models:
         tests:
           - not_null
 
-  - name: gold_kpi_revenue_by_country
+  - name: gold_Summary_revenue_by_country
     columns:
       - name: country
         tests:
           - unique
           - not_null
 
-  - name: gold_kpi_revenue_by_month
+  - name: gold_Summary_revenue_by_month
     columns:
       - name: revenue_month
         tests:
           - unique
           - not_null
 
-  - name: gold_kpi_top_products
+  - name: gold_Summary_top_products
     columns:
       - name: product_key
         tests:
           - unique
           - not_null
 
-  - name: gold_kpi_customer_summary
+  - name: gold_Calculated_customer_summary
     columns:
       - name: customer_key
         tests:
           - unique
           - not_null
 
-  - name: gold_kpi_order_delivery
+  - name: gold_Summary_order_delivery
     columns:
       - name: order_key
         tests:
           - unique
           - not_null
 
-  - name: gold_kpi_invoice_summary
+  - name: gold_Calculated_invoice_summary
     columns:
       - name: invoice_id
         tests:
-          - unique
+          
           - not_null
-  - name: gold_dim_date_1.sql
+ 

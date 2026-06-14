@@ -10,14 +10,10 @@ flags:
   use_materialization_v2: true
 
 model-paths: ["models"]
-# analysis-paths: ["analyses"]
-# test-paths: ["tests"]
-# seed-paths: ["seeds"]
-# macro-paths: ["macros"]
-# snapshot-paths: ["snapshots"]
 
-target-path: "target"  # directory which will store compiled SQL files
-clean-targets:         # directories to be removed by `dbt clean`
+
+target-path: "target"  
+clean-targets:        
   - "target"
   - "dbt_packages"
 
