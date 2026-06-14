@@ -83,7 +83,7 @@ final AS (
             ELSE                  'Budget'
         END                                             AS price_category,
 
-        -- DATE BREAKDOWNS (used by gold_dim_date)
+        -- DATE BREAKDOWNS (used by gold_dim_date these are used )
         CAST(InvoiceDate    AS TIMESTAMP)               AS invoice_date,
         CAST(DATE(InvoiceDate) AS DATE)                 AS invoice_day,
         YEAR(InvoiceDate)                               AS invoice_year,
