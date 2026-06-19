@@ -99,7 +99,7 @@ final AS (
 
     FROM deduplicated
     WHERE row_num = 1 
-    -- AND transaction_key IS NOT NULL 
+    
    -- WHERE transaction_key IS NOT Null 
 )
 
