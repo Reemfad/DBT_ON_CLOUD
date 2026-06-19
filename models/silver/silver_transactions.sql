@@ -95,8 +95,7 @@ final AS (
         -- AUDIT COLUMNS
         CAST(Sheet          AS STRING)                  AS source_sheet
         --_source_system,
-        --_ingestion_ts
-
+        
     FROM deduplicated
     WHERE row_num = 1 
     
